@@ -1,0 +1,799 @@
+{
+  "contractName": "IMyContract",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_erc20Contract",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "deposit",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_erc20Contract",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdraw",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "amountWithdrawn",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "checkCollateralValueInEth",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "amountInEth",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.0+commit.26b70077\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"checkCollateralValueInEth\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"amountInEth\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_erc20Contract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"deposit\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"success\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_erc20Contract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"withdraw\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"amountWithdrawn\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"checkCollateralValueInEth()\":{\"details\":\"Read only function \",\"returns\":{\"amountInEth\":\"Returns the value locked as collateral posted by msg.sender\"}},\"deposit(address,uint256)\":{\"details\":\"Deposit ERC20 tokens on behalf of msg.sender to Aave Protocol\",\"params\":{\"_amount\":\"The amount of the underlying asset to deposit\",\"_erc20Contract\":\"The address fo the underlying asset to deposit to Aave Protocol v2\"},\"returns\":{\"success\":\"Whether the deposit operation was successful or not\"}},\"withdraw(address,uint256)\":{\"details\":\"Withdraw ERC20 tokens on behalf of msg.sender from Aave Protocol\",\"params\":{\"_amount\":\"The amount to be withdrawn\",\"_erc20Contract\":\"The address of the underlying asset being withdrawn\"},\"returns\":{\"amountWithdrawn\":\"The actual amount withdrawn from Aave\"}}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/tomtsaoao/Documents/job apps/Flurry Finance Take Home/aave-sc/contracts/Interfaces/IMyContract.sol\":\"IMyContract\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/tomtsaoao/Documents/job apps/Flurry Finance Take Home/aave-sc/contracts/Interfaces/IMyContract.sol\":{\"keccak256\":\"0x723bc3aa54368f72792fd013b3e99c4d2109f3134a87c01475cdc81977469672\",\"urls\":[\"bzz-raw://beb08a347f9f949b51c10c367ec3a54091dd4f114980065fedb5661e13fe215a\",\"dweb:/ipfs/QmS5f1wqUmuhgAUrNiuHEmyq1M5YccEejsEyqxe1akN3yQ\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.6.0;\n\ninterface IMyContract {\n\n    /// @dev Deposit ERC20 tokens on behalf of msg.sender to Aave Protocol\n    /// @param _erc20Contract The address fo the underlying asset to deposit to Aave Protocol v2\n    /// @param _amount The amount of the underlying asset to deposit\n    /// @return success Whether the deposit operation was successful or not\n    function deposit(address _erc20Contract, uint256 _amount) external returns (bool success);\n\n    /// @dev Withdraw ERC20 tokens on behalf of msg.sender from Aave Protocol\n    /// @param _erc20Contract The address of the underlying asset being withdrawn\n    /// @param _amount The amount to be withdrawn\n    /// @return amountWithdrawn The actual amount withdrawn from Aave\n    function withdraw(address _erc20Contract, uint256 _amount) external returns (uint256 amountWithdrawn);\n\n    /// @dev Read only function \n    /// @return amountInEth Returns the value locked as collateral posted by msg.sender\n    function checkCollateralValueInEth() external view returns (uint256 amountInEth);\n}",
+  "sourcePath": "/Users/tomtsaoao/Documents/job apps/Flurry Finance Take Home/aave-sc/contracts/Interfaces/IMyContract.sol",
+  "ast": {
+    "absolutePath": "/Users/tomtsaoao/Documents/job apps/Flurry Finance Take Home/aave-sc/contracts/Interfaces/IMyContract.sol",
+    "exportedSymbols": {
+      "IMyContract": [
+        556
+      ]
+    },
+    "id": 557,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 532,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:23:3"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 556,
+        "linearizedBaseContracts": [
+          556
+        ],
+        "name": "IMyContract",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@dev Deposit ERC20 tokens on behalf of msg.sender to Aave Protocol\n @param _erc20Contract The address fo the underlying asset to deposit to Aave Protocol v2\n @param _amount The amount of the underlying asset to deposit\n @return success Whether the deposit operation was successful or not",
+            "functionSelector": "47e7ef24",
+            "id": 541,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "deposit",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 537,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 534,
+                  "name": "_erc20Contract",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 541,
+                  "src": "420:22:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 533,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "420:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 536,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 541,
+                  "src": "444:15:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 535,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "444:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "419:41:3"
+            },
+            "returnParameters": {
+              "id": 540,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 539,
+                  "name": "success",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 541,
+                  "src": "479:12:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 538,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "479:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "478:14:3"
+            },
+            "scope": 556,
+            "src": "403:90:3",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Withdraw ERC20 tokens on behalf of msg.sender from Aave Protocol\n @param _erc20Contract The address of the underlying asset being withdrawn\n @param _amount The amount to be withdrawn\n @return amountWithdrawn The actual amount withdrawn from Aave",
+            "functionSelector": "f3fef3a3",
+            "id": 550,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "withdraw",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 546,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 543,
+                  "name": "_erc20Contract",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 550,
+                  "src": "797:22:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 542,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "797:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 545,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 550,
+                  "src": "821:15:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 544,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "821:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "796:41:3"
+            },
+            "returnParameters": {
+              "id": 549,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 548,
+                  "name": "amountWithdrawn",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 550,
+                  "src": "856:23:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 547,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "856:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "855:25:3"
+            },
+            "scope": 556,
+            "src": "779:102:3",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@dev Read only function \n @return amountInEth Returns the value locked as collateral posted by msg.sender",
+            "functionSelector": "7cc7f5df",
+            "id": 555,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "checkCollateralValueInEth",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 551,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1042:2:3"
+            },
+            "returnParameters": {
+              "id": 554,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 553,
+                  "name": "amountInEth",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 555,
+                  "src": "1068:19:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 552,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1068:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1067:21:3"
+            },
+            "scope": 556,
+            "src": "1008:81:3",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 557,
+        "src": "57:1034:3"
+      }
+    ],
+    "src": "32:1059:3"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/Users/tomtsaoao/Documents/job apps/Flurry Finance Take Home/aave-sc/contracts/Interfaces/IMyContract.sol",
+      "exportedSymbols": {
+        "IMyContract": [
+          556
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.6",
+            ".0"
+          ]
+        },
+        "id": 532,
+        "name": "PragmaDirective",
+        "src": "32:23:3"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            556
+          ],
+          "name": "IMyContract",
+          "scope": 557
+        },
+        "children": [
+          {
+            "attributes": {
+              "body": null,
+              "documentation": "@dev Deposit ERC20 tokens on behalf of msg.sender to Aave Protocol\n @param _erc20Contract The address fo the underlying asset to deposit to Aave Protocol v2\n @param _amount The amount of the underlying asset to deposit\n @return success Whether the deposit operation was successful or not",
+              "functionSelector": "47e7ef24",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "deposit",
+              "overrides": null,
+              "scope": 556,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_erc20Contract",
+                      "overrides": null,
+                      "scope": 541,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 533,
+                        "name": "ElementaryTypeName",
+                        "src": "420:7:3"
+                      }
+                    ],
+                    "id": 534,
+                    "name": "VariableDeclaration",
+                    "src": "420:22:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_amount",
+                      "overrides": null,
+                      "scope": 541,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 535,
+                        "name": "ElementaryTypeName",
+                        "src": "444:7:3"
+                      }
+                    ],
+                    "id": 536,
+                    "name": "VariableDeclaration",
+                    "src": "444:15:3"
+                  }
+                ],
+                "id": 537,
+                "name": "ParameterList",
+                "src": "419:41:3"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "success",
+                      "overrides": null,
+                      "scope": 541,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 538,
+                        "name": "ElementaryTypeName",
+                        "src": "479:4:3"
+                      }
+                    ],
+                    "id": 539,
+                    "name": "VariableDeclaration",
+                    "src": "479:12:3"
+                  }
+                ],
+                "id": 540,
+                "name": "ParameterList",
+                "src": "478:14:3"
+              }
+            ],
+            "id": 541,
+            "name": "FunctionDefinition",
+            "src": "403:90:3"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": "@dev Withdraw ERC20 tokens on behalf of msg.sender from Aave Protocol\n @param _erc20Contract The address of the underlying asset being withdrawn\n @param _amount The amount to be withdrawn\n @return amountWithdrawn The actual amount withdrawn from Aave",
+              "functionSelector": "f3fef3a3",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "withdraw",
+              "overrides": null,
+              "scope": 556,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_erc20Contract",
+                      "overrides": null,
+                      "scope": 550,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 542,
+                        "name": "ElementaryTypeName",
+                        "src": "797:7:3"
+                      }
+                    ],
+                    "id": 543,
+                    "name": "VariableDeclaration",
+                    "src": "797:22:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_amount",
+                      "overrides": null,
+                      "scope": 550,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 544,
+                        "name": "ElementaryTypeName",
+                        "src": "821:7:3"
+                      }
+                    ],
+                    "id": 545,
+                    "name": "VariableDeclaration",
+                    "src": "821:15:3"
+                  }
+                ],
+                "id": 546,
+                "name": "ParameterList",
+                "src": "796:41:3"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "amountWithdrawn",
+                      "overrides": null,
+                      "scope": 550,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 547,
+                        "name": "ElementaryTypeName",
+                        "src": "856:7:3"
+                      }
+                    ],
+                    "id": 548,
+                    "name": "VariableDeclaration",
+                    "src": "856:23:3"
+                  }
+                ],
+                "id": 549,
+                "name": "ParameterList",
+                "src": "855:25:3"
+              }
+            ],
+            "id": 550,
+            "name": "FunctionDefinition",
+            "src": "779:102:3"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": "@dev Read only function \n @return amountInEth Returns the value locked as collateral posted by msg.sender",
+              "functionSelector": "7cc7f5df",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "checkCollateralValueInEth",
+              "overrides": null,
+              "scope": 556,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 551,
+                "name": "ParameterList",
+                "src": "1042:2:3"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "amountInEth",
+                      "overrides": null,
+                      "scope": 555,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 552,
+                        "name": "ElementaryTypeName",
+                        "src": "1068:7:3"
+                      }
+                    ],
+                    "id": 553,
+                    "name": "VariableDeclaration",
+                    "src": "1068:19:3"
+                  }
+                ],
+                "id": 554,
+                "name": "ParameterList",
+                "src": "1067:21:3"
+              }
+            ],
+            "id": 555,
+            "name": "FunctionDefinition",
+            "src": "1008:81:3"
+          }
+        ],
+        "id": 556,
+        "name": "ContractDefinition",
+        "src": "57:1034:3"
+      }
+    ],
+    "id": 557,
+    "name": "SourceUnit",
+    "src": "32:1059:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.0+commit.26b70077.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.1",
+  "updatedAt": "2021-05-18T11:12:02.046Z",
+  "devdoc": {
+    "methods": {
+      "checkCollateralValueInEth()": {
+        "details": "Read only function ",
+        "returns": {
+          "amountInEth": "Returns the value locked as collateral posted by msg.sender"
+        }
+      },
+      "deposit(address,uint256)": {
+        "details": "Deposit ERC20 tokens on behalf of msg.sender to Aave Protocol",
+        "params": {
+          "_amount": "The amount of the underlying asset to deposit",
+          "_erc20Contract": "The address fo the underlying asset to deposit to Aave Protocol v2"
+        },
+        "returns": {
+          "success": "Whether the deposit operation was successful or not"
+        }
+      },
+      "withdraw(address,uint256)": {
+        "details": "Withdraw ERC20 tokens on behalf of msg.sender from Aave Protocol",
+        "params": {
+          "_amount": "The amount to be withdrawn",
+          "_erc20Contract": "The address of the underlying asset being withdrawn"
+        },
+        "returns": {
+          "amountWithdrawn": "The actual amount withdrawn from Aave"
+        }
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
