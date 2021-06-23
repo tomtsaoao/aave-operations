@@ -1,6 +1,6 @@
 # Smart Contracts Exercise
 
-Smart Contract to perform operations on the Aave Protocol.
+Smart Contract to deposit, withdraw and check collateral value of ERC20 tokens on the Aave Protocol.
 
 ## Configuration
 
